@@ -1,14 +1,14 @@
 shader_type spatial;
 
 uniform sampler2D text : hint_albedo;
-uniform sampler2D normal_map : hint_normal;
+uniform sampler2D normal_map : hint_albedo;
 uniform vec4 color : hint_color;
 uniform bool useTexture = true;
 uniform bool useNormalMap = false;
 uniform float amount_of_light : hint_range(0.0,1.0);
 uniform float amount_of_shadow : hint_range(0.0,1.0);
 uniform float cut_point : hint_range(0.0, 1.0);
-uniform float normalMapDepth : hint_range(0.0, 1.0);
+uniform float normalMapDepth;
 
 void fragment()
 {
@@ -22,8 +22,9 @@ void fragment()
 	}
 	if(useNormalMap == true)
 	{
-		NORMALMAP = texture(normal_map, UV).xyz * vec3(2.0,2.0,1.0) - vec3(1.0,1.0,0.0);
-		NORMALMAP_DEPTH = normalMapDepth;
+		vec3 normalmap = texture(normal_map, UV).xyz * vec3(2.0,2.0,2.0) - vec3(1.0,1.0,1.0);
+		vec3 normal = normalize(TANGENT * normalmap.y + BINORMAL * normalmap.x + NORMAL * normalmap.z);
+		NORMAL = normal;
 	} else
 	{
 		NORMALMAP_DEPTH = 0.0;
@@ -50,7 +51,7 @@ void light()
 	float intensity = calc_toonStripes(NdotL);
 	if(useNormalMap == true)
 	{
-		DIFFUSE_LIGHT = ALBEDO*intensity*4.0*ATTENUATION;
+		DIFFUSE_LIGHT = ALBEDO*intensity*ATTENUATION;
 	} else
 	{
 		DIFFUSE_LIGHT = ALBEDO*intensity*ATTENUATION;
