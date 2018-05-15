@@ -11,8 +11,8 @@ How to use it:
 
 1) Create a new ShaderMaterial;
 2) Load my toonProva.shader into the shader box;
-3) (TEMPORARY) since it seems that Godot Shading Language has a problem with assigning default values to uniforms (but it should be fixed for release 3.1) you have to Adjust the parameters. 
-   The default values are:
+3) (TEMPORARY) since it seems that Godot Shading Language has a problem with assigning default values to uniforms (but it should be fixed for release 3.1) you have to Adjust the parameters.\n
+   The default values are:\n
    Color -> White (All 1.0)
    Use Texture -> On (Still you need to load a texture in order to see textures, so if you just want to use a color turn it off)
    Use Normal Map -> Off (At the moment it is not working well, at least for me)
