@@ -21,3 +21,7 @@ How to use it:
    Cut Point -> 0.5 (It is used to fix the position shadow on the surface)  
        
 And that's it! Feel free to use it anyway you want, i will probably add comments to the code today so you can tune yourself the code if you need it. 
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+For version 1.1 I'm fixing usage of multiple lights, and I'm building a new shader that's very similar to "Guilty Gear Xrd"'s shader (I hope the title is right ahah) because I wanted to achieve a similar result in my next game. And since Godot is a free and open-source software I'm planning to release all the (interesting) code I'm creating, so a lot of noobs (like me) won't have to learn a shading language without examples ahah. Hope you will enjoy it!
