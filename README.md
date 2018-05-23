@@ -45,7 +45,7 @@ This is my new Shader for Godot!
 </p>
 
 1. Cut Point decides the position where object begins to be unlit (DEFAULT 0.5)
-2. Adjust Threshold is needed only if you are using VERTEX COLOR to threshold lightning (DEFAULT 0)
+2. Adjust Threshold is needed only if you are using VERTEX COLOR to threshold lightning (DEFAULT 1)
 3. Shadow Force decides the power of Shadow texture (DEFAULT 1.0, but probably needs to be lowered, that's up to you)
 4. Load your light texture here
 5. Load your shadow texture here
